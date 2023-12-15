@@ -14,7 +14,6 @@ mp.register_script_message("switch-shaders", function () {
   if (!shaders_str.length && shaders_status.length) {
     //shaders-on: restore glsl-shaders (but only if empty!)
     mp.commandv("change-list", "glsl-shaders", "set", shaders_status.join(";"));
-    mp.osd_message(mp.get_property("glsl-shaders"), 0.5);
     print("shaders-on:", shaders_status);
     shaders_status = [];
   } else {
