@@ -2,7 +2,7 @@
 
 local function osd_f(shdr)
   if shdr ~= '' then
-    shdr = shdr:gsub(',', '\n• ')
+    shdr = shdr:gsub(';', '\n• ')
     shdr = shdr:gsub('~~/', '')
     shdr = shdr:gsub('/', ' - ')
   end
