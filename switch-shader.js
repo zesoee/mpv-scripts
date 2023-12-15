@@ -13,9 +13,7 @@ mp.register_script_message("switch-shaders", function () {
   var shaders_str = mp.get_property("glsl-shaders");
   if (!shaders_str.length && shaders_status.length) {
     //shaders-on: restore glsl-shaders (but only if empty!)
-    shaders_status.forEach(function (shader) {
-      mp.commandv("change-list", "glsl-shaders", "append", shader);
-    });
+    mp.commandv("change-list", "glsl-shaders", "set", shaders_status.join(";"));
     mp.osd_message(mp.get_property("glsl-shaders"), 0.5);
     print("shaders-on:", shaders_status);
     shaders_status = [];
@@ -32,9 +30,7 @@ mp.register_script_message("switch-vf", function () {
   var vf_str = mp.get_property("vf");
   if (!vf_str.length && vf_status.length) {
     //video filter-on: restore vf (but only if vf is empty!)
-    vf_status.forEach(function (vfilter) {
-      mp.commandv("change-list", "vf", "append", vfilter);
-    });
+    mp.commandv("change-list", "vf", "set", vf_status.join(";"));
     print("vf-on:", vf_status); //mp.msg.info()
     vf_status = [];
   } else {
