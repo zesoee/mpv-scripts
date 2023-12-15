@@ -7,7 +7,7 @@ local function osd_f(shdr)
     end
     shdr = shdr:gsub(';', '\n• ')
     shdr = shdr:gsub('~~/', '')
-    shdr = shdr:gsub('/', ' - ')
+    shdr = shdr:gsub('shaders/', '')
   end
   mp.osd_message('Shader:\n• ' .. shdr)
 end 
