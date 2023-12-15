@@ -2,6 +2,9 @@
 
 local function osd_f(shdr)
   if shdr ~= '' then
+    if shdr:sub(1, 1) == ";" then
+      shdr = shdr:sub(2)
+    end
     shdr = shdr:gsub(';', '\n• ')
     shdr = shdr:gsub('~~/', '')
     shdr = shdr:gsub('/', ' - ')
