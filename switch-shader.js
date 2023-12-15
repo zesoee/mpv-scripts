@@ -20,7 +20,7 @@ mp.register_script_message("switch-shaders", function () {
     //shaders-off: store current glsl-shaders
     shaders_status = mp.get_property("glsl-shaders").split(";");
     mp.set_property("glsl-shaders", "");
-    mp.osd_message("shaders-off", 0.5);
+    mp.osd_message("shaders-off");
     print("shaders-off", shaders_status);
   }
 });
@@ -36,7 +36,7 @@ mp.register_script_message("switch-vf", function () {
     //vfilter-off: store current vf
     vf_status = mp.get_property("vf").split(";");
     mp.set_property("vf", "");
-    mp.osd_message("vf-off", 0.5);
+    mp.osd_message("vf-off");
     print("vf-off", vf_status);
   }
 });
